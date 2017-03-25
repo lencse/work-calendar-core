@@ -1,0 +1,13 @@
+{
+    "name": "lencse/work-calendarücore",
+    "description": "Work calendar core library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levente Löki",
+            "email": "leventeloki@gmail.com"
+        }
+    ],
+    "require": {}
+}
