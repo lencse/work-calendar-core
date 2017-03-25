@@ -10,7 +10,9 @@ class DayTest extends \PHPUnit_Framework_TestCase
 
     public function testDayCreation()
     {
-        $day = new Day('test');
+        $day = new Day(11, 27, 'test');
+        $this->assertEquals(11, $day->getMonth());
+        $this->assertEquals(27, $day->getDay());
         $this->assertEquals('test', $day->getDescription());
     }
 
