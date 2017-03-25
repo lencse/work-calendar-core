@@ -7,14 +7,14 @@ class Day
 {
 
     /**
-     * @var int
+     * @var \DateTime
      */
-    private $month;
+    private $date;
 
     /**
-     * @var int
+     * @var DayType
      */
-    private $day;
+    private $type;
 
     /**
      * @var string
@@ -22,31 +22,31 @@ class Day
     private $description;
 
     /**
-     * @param int $month
-     * @param int $day
-     * @param string $description
+     * @param \DateTime $date
+     * @param DayType $type
+     * @param $description
      */
-    public function __construct($month, $day, $description)
+    public function __construct(\DateTime $date, DayType $type, $description)
     {
-        $this->month = $month;
-        $this->day = $day;
+        $this->date = $date;
+        $this->type = $type;
         $this->description = $description;
     }
 
     /**
-     * @return int
+     * @return \DateTime
      */
-    public function getMonth()
+    public function getDate()
     {
-        return $this->month;
+        return $this->date;
     }
 
     /**
-     * @return int
+     * @return DayType
      */
-    public function getDay()
+    public function getType()
     {
-        return $this->day;
+        return $this->type;
     }
 
     /**
@@ -56,5 +56,4 @@ class Day
     {
         return $this->description;
     }
-
 }
