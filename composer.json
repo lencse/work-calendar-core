@@ -1,6 +1,7 @@
 {
     "name": "lencse/work-calendar-core",
     "description": "Work calendar core library",
+    "version": "0.1.0-dev",
     "type": "library",
     "license": "MIT",
     "authors": [
