@@ -1,13 +1,13 @@
 <?php
 
-namespace Lencse\WorkCalendar\Component ;
+namespace Lencse\WorkCalendar\Day;
 
 
 class Day
 {
 
     /**
-     * @var \DateTime
+     * @var Date
      */
     private $date;
 
@@ -22,11 +22,11 @@ class Day
     private $description;
 
     /**
-     * @param \DateTime $date
+     * @param Date $date
      * @param DayType $type
      * @param $description
      */
-    public function __construct(\DateTime $date, DayType $type, $description)
+    public function __construct(Date $date, DayType $type, $description)
     {
         $this->date = $date;
         $this->type = $type;
@@ -34,11 +34,11 @@ class Day
     }
 
     /**
-     * @return \DateTime
+     * @return Date
      */
     public function getDate()
     {
-        return $this->date;
+        return clone $this->date;
     }
 
     /**
@@ -56,4 +56,5 @@ class Day
     {
         return $this->description;
     }
+
 }

@@ -11,8 +11,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Lencse\\Test\\": "./test/Lencse/Test/",
-            "Lencse\\": "./src/Lencse/"
+            "Lencse\\Test\\WorkCalendar\\Day\\": "./test/Lencse/Test/WorkCalendar/Day/",
+            "Lencse\\WorkCalendar\\Day\\": "./src/Lencse/WorkCalendar/Day/"
         }
     },
     "require": {

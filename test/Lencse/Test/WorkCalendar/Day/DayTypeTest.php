@@ -3,7 +3,7 @@
 namespace Lencse\Test\WorkCalendar\Component;
 
 
-use Lencse\WorkCalendar\Component\DayType;
+use Lencse\WorkCalendar\Day\DayType;
 
 class DayTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +18,7 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
             DayType::WEEKEND => true
         ];
         foreach ($types as $type => $restDay) {
-            $dayType = new DayType($type);
+            $dayType = DayType::get($type);
             $this->assertEquals($type, $dayType->getType());
             $this->assertEquals($restDay, $dayType->isRestDay());
         }
@@ -27,12 +27,27 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
     public function testArgument()
     {
         try {
-            $type = new DayType('invalid');
+            $type = DayType::get('invalid');
         }
         catch (\InvalidArgumentException $e) {
             return;
         }
         $this->fail('Exception should be thrown');
+    }
+
+    public function testName()
+    {
+        $names = [
+            DayType::NON_WORKING_DAY => 'Munkaszüneti nap',
+            DayType::RELOCATED_REST_DAY => 'Áthelyezett pihenőnap',
+            DayType::RELOCATED_WORKING_DAY => 'Áthelyezett munkanap',
+            DayType::WORKING_DAY => 'Munkanap',
+            DayType::WEEKEND => 'Heti pihenőnap'
+        ];
+        foreach ($names as $type => $name) {
+            $dayType = DayType::get($type);
+            $this->assertEquals($name, $dayType->getName());
+        }
     }
 
 }
