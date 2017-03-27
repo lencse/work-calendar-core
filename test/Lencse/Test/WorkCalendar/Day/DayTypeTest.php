@@ -1,6 +1,6 @@
 <?php
 
-namespace Lencse\Test\WorkCalendar\Component;
+namespace Lencse\Test\WorkCalendar\Day;
 
 
 use Lencse\WorkCalendar\Day\DayType;

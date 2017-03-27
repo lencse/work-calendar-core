@@ -61,4 +61,15 @@ class Date
         return $this->day;
     }
 
+    /**
+     * @return bool
+     */
+    public function isWeekend()
+    {
+        $date = \DateTime::createFromFormat('Y.n.j', implode('.', [$this->year, $this->month, $this->day]));
+        $dayOfWeek = (int) $date->format('N');
+
+        return $dayOfWeek == 6 || $dayOfWeek == 7;
+    }
+
 }

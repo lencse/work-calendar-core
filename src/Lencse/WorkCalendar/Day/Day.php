@@ -6,55 +6,15 @@ namespace Lencse\WorkCalendar\Day;
 class Day
 {
 
-    /**
-     * @var Date
-     */
-    private $date;
+   use DayTrait;
 
     /**
-     * @var DayType
+     * @param SpecialDay $specialDay
+     * @return Day
      */
-    private $type;
-
-    /**
-     * @var string
-     */
-    private $description;
-
-    /**
-     * @param Date $date
-     * @param DayType $type
-     * @param $description
-     */
-    public function __construct(Date $date, DayType $type, $description)
+    public static function createFromSpecialDay(SpecialDay $specialDay)
     {
-        $this->date = $date;
-        $this->type = $type;
-        $this->description = $description;
-    }
-
-    /**
-     * @return Date
-     */
-    public function getDate()
-    {
-        return clone $this->date;
-    }
-
-    /**
-     * @return DayType
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
+        return new self($specialDay->getDate(), $specialDay->getType(), $specialDay->getDescription());
     }
 
 }
