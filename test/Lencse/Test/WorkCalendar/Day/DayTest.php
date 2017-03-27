@@ -23,7 +23,6 @@ class DayTest extends \PHPUnit_Framework_TestCase
         $day = new Day(new Date(2017, 3, 18), DayType::get(DayType::RELOCATED_WORKING_DAY));
         $this->assertEquals(new Date(2017, 3, 18), $day->getDate());
         $this->assertEquals('', $day->getDescription());
-
     }
 
 }

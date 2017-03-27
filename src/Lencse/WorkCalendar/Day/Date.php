@@ -66,10 +66,28 @@ class Date
      */
     public function isWeekend()
     {
-        $date = \DateTime::createFromFormat('Y.n.j', implode('.', [$this->year, $this->month, $this->day]));
-        $dayOfWeek = (int) $date->format('N');
+        $dayOfWeek = (int) $this->asDateTime()->format('N');
 
         return $dayOfWeek == 6 || $dayOfWeek == 7;
+    }
+
+    /**
+     * The __toString method allows a class to decide how it will react when it is converted to a string.
+     *
+     * @return string
+     * @link http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.tostring
+     */
+    function __toString()
+    {
+        return $this->asDateTime()->format('Ymd');
+    }
+
+    /**
+     * @return \DateTime
+     */
+    private function asDateTime()
+    {
+        return \DateTime::createFromFormat('Y.n.j', implode('.', [$this->year, $this->month, $this->day]));
     }
 
 }

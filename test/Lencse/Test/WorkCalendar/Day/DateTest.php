@@ -19,7 +19,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     public function testInvalid()
     {
         try {
-            $date = new Date(2017, 100, 100);
+            $date = new Date(2017, 2, 29);
         }
         catch (\InvalidArgumentException $e) {
             return;
@@ -42,6 +42,12 @@ class DateTest extends \PHPUnit_Framework_TestCase
             $date = new Date($data[0], $data[1], $data[2]);
             $this->assertEquals($data[3], $date->isWeekend());
         }
+    }
+
+    public function testToString()
+    {
+        $date = new Date(2017, 3, 15);
+        $this->assertEquals('20170315', (string) $date);
     }
 
 }

@@ -6,20 +6,20 @@ namespace Lencse\WorkCalendar\Day\Factory;
 use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\Day;
 use Lencse\WorkCalendar\Day\DayType;
-use Lencse\WorkCalendar\Day\Store\SpecialDayRetriever;
+use Lencse\WorkCalendar\Day\Store\IrregularDayRetriever;
 
 class DayFactory
 {
 
     /**
-     * @var SpecialDayRetriever
+     * @var IrregularDayRetriever
      */
     private $store;
 
     /**
-     * @param SpecialDayRetriever $specialDayRetriever
+     * @param IrregularDayRetriever $specialDayRetriever
      */
-    public function __construct(SpecialDayRetriever $specialDayRetriever)
+    public function __construct(IrregularDayRetriever $specialDayRetriever)
     {
         $this->store = $specialDayRetriever;
     }
@@ -30,8 +30,8 @@ class DayFactory
      */
     public function createDayForDate(Date $date)
     {
-        if ($this->store->hasSpecialDayForDate($date)) {
-            return Day::createFromSpecialDay($this->store->getSpecialDayForDate($date));
+        if ($this->store->hasIrregularDayForDate($date)) {
+            return Day::createFromIrregularDay($this->store->getIrregularDayForDate($date));
         }
         $type = $date->isWeekend() ? DayType::WEEKEND : DayType::WORKING_DAY;
 

@@ -9,10 +9,10 @@ class Day
    use DayTrait;
 
     /**
-     * @param SpecialDay $specialDay
+     * @param IrregularDay $specialDay
      * @return Day
      */
-    public static function createFromSpecialDay(SpecialDay $specialDay)
+    public static function createFromIrregularDay(IrregularDay $specialDay)
     {
         return new self($specialDay->getDate(), $specialDay->getType(), $specialDay->getDescription());
     }
