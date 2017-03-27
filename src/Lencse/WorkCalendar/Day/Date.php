@@ -31,7 +31,6 @@ class Date
         if (!checkdate($month, $day, $year)) {
             throw new \InvalidArgumentException(sprintf('Invalid date: %d.%d.%d.', $year, $month, $day));
         }
-
         $this->year = $year;
         $this->month = $month;
         $this->day = $day;

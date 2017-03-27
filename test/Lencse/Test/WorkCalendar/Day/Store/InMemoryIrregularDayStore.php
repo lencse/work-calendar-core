@@ -24,7 +24,9 @@ class InMemoryIrregularDayStore implements IrregularDayStore
      */
     public function getAllIrregularDays()
     {
-        return ['20170315' => new IrregularDay(new Date(2017, 3, 15), DayType::get(DayType::NON_WORKING_DAY))];
+        return [
+            '20170315' => new IrregularDay(new Date(2017, 3, 15), DayType::get(DayType::NON_WORKING_DAY))
+        ];
     }
 
 }

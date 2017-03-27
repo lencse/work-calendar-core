@@ -14,14 +14,14 @@ class DayFactory
     /**
      * @var IrregularDayRetriever
      */
-    private $store;
+    private $retriever;
 
     /**
-     * @param IrregularDayRetriever $specialDayRetriever
+     * @param IrregularDayRetriever $irregularDayRetriever
      */
-    public function __construct(IrregularDayRetriever $specialDayRetriever)
+    public function __construct(IrregularDayRetriever $irregularDayRetriever)
     {
-        $this->store = $specialDayRetriever;
+        $this->retriever = $irregularDayRetriever;
     }
 
     /**
@@ -30,8 +30,8 @@ class DayFactory
      */
     public function createDayForDate(Date $date)
     {
-        if ($this->store->hasIrregularDayForDate($date)) {
-            return Day::createFromIrregularDay($this->store->getIrregularDayForDate($date));
+        if ($this->retriever->hasIrregularDayForDate($date)) {
+            return Day::createFromIrregularDay($this->retriever->getIrregularDayForDate($date));
         }
         $type = $date->isWeekend() ? DayType::WEEKEND : DayType::WORKING_DAY;
 
