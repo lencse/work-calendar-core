@@ -4,9 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "598b24749cdf36896f79c7274c4caf7b",
+    "content-hash": "bb37c772087ff7446d291746a1fb4c58",
     "packages": [],
     "packages-dev": [
+        {
+            "name": "corneltek/getoptionkit",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/c9s/GetOptionKit.git",
+                "reference": "ded820e487ab1aade804b846712569499956e2ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/c9s/GetOptionKit/zipball/ded820e487ab1aade804b846712569499956e2ee",
+                "reference": "ded820e487ab1aade804b846712569499956e2ee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "corneltek/phpunit-testmore": "dev-master",
+                "phpunit/phpunit": ">=4.8,<6",
+                "satooshi/php-coveralls": "^1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GetOptionKit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yo-An Lin",
+                    "email": "cornelius.howl@gmail.com"
+                }
+            ],
+            "description": "Powerful command-line option toolkit",
+            "homepage": "http://github.com/c9s/GetOptionKit",
+            "time": "2017-02-22T04:51:57+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
@@ -60,6 +107,49 @@
                 "instantiate"
             ],
             "time": "2015-06-14T21:17:01+00:00"
+        },
+        {
+            "name": "lencse/ci-tools",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lencse/ci-tools.git",
+                "reference": "2efb44bccf7b1c439e343efcfc1ad33578d21a16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lencse/ci-tools/zipball/2efb44bccf7b1c439e343efcfc1ad33578d21a16",
+                "reference": "2efb44bccf7b1c439e343efcfc1ad33578d21a16",
+                "shasum": ""
+            },
+            "require": {
+                "corneltek/getoptionkit": "^2.5",
+                "phpunit/phpunit": "~5.7"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.8"
+            },
+            "bin": [
+                "bin/ci-test-coverage"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lencse\\Ci\\": "./src/Lencse/Ci/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Levente Löki",
+                    "email": "leventeloki@gmail.com"
+                }
+            ],
+            "description": "Continous integration devtools",
+            "time": "2017-03-29T20:16:38+00:00"
         },
         {
             "name": "myclabs/deep-copy",
