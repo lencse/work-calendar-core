@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day;
 
-
 use Lencse\WorkCalendar\Day\Date;
 
 class DateTest extends \PHPUnit_Framework_TestCase
@@ -20,8 +19,7 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $date = new Date(2017, 2, 29);
-        }
-        catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $e) {
             return;
         }
         $this->fail('Exception should be thrown');
@@ -49,5 +47,4 @@ class DateTest extends \PHPUnit_Framework_TestCase
         $date = new Date(2017, 3, 15);
         $this->assertEquals('20170315', (string) $date);
     }
-
 }

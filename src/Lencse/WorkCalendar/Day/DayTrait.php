@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day;
 
-
 trait DayTrait
 {
 
@@ -56,5 +55,4 @@ trait DayTrait
     {
         return $this->description;
     }
-
 }

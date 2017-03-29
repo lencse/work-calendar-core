@@ -21,7 +21,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "5.*",
-        "phpmd/phpmd": "^2.6"
+        "phpmd/phpmd": "^2.6",
+        "squizlabs/php_codesniffer": "^2.8"
     },
     "scripts": {
         "test": [
@@ -30,7 +31,8 @@
         "test-all": [
             "vendor/bin/phpunit",
             "vendor/bin/phpunit --no-coverage ci/CodeCoverageTest.php",
-            "vendor/bin/phpmd src/ text phpmd.xml"
+            "vendor/bin/phpmd src/ text phpmd.xml",
+            "vendor/bin/phpcs --standard=./phpcs-ruleset.xml src test"
         ]
     }
 }

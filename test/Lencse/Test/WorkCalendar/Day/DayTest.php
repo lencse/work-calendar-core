@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day;
 
-
 use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\Day;
 use Lencse\WorkCalendar\Day\DayType;
@@ -24,5 +23,4 @@ class DayTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new Date(2017, 3, 18), $day->getDate());
         $this->assertEquals('', $day->getDescription());
     }
-
 }

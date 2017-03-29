@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day\Store;
 
-
 use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\DayType;
 use Lencse\WorkCalendar\Day\IrregularDay;
@@ -28,5 +27,4 @@ class InMemoryIrregularDayStore implements IrregularDayStore
             '20170315' => new IrregularDay(new Date(2017, 3, 15), DayType::get(DayType::NON_WORKING_DAY))
         ];
     }
-
 }

@@ -1,8 +1,10 @@
 <?php
 
+namespace Lencse\Ci;
+
 define('MIN_COVERAGE', 95);
 
-class CodeCoverageTest extends PHPUnit_Framework_TestCase
+class CodeCoverageTest extends \PHPUnit_Framework_TestCase
 {
 
     public function setUp()
@@ -14,7 +16,7 @@ class CodeCoverageTest extends PHPUnit_Framework_TestCase
 
     public function testCoverage()
     {
-        $xml = new SimpleXMLElement(file_get_contents(__DIR__ . '/../build/logs/clover.xml'));
+        $xml = new \SimpleXMLElement(file_get_contents(__DIR__ . '/../build/logs/clover.xml'));
         $metrics = $xml->xpath('//metrics');
         $total = 0;
         $covered = 0;
@@ -24,5 +26,4 @@ class CodeCoverageTest extends PHPUnit_Framework_TestCase
         }
         $this->assertGreaterThanOrEqual(MIN_COVERAGE, $covered / $total * 100);
     }
-
 }

@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day\Store;
 
-
 use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\IrregularDay;
 
@@ -20,5 +19,4 @@ interface IrregularDayRetriever
      * @return IrregularDay
      */
     public function getIrregularDayForDate(Date $date);
-
 }
