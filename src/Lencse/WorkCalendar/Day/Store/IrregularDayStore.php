@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day\Store;
 
-
 use Lencse\WorkCalendar\Day\IrregularDay;
 
 interface IrregularDayStore
@@ -20,5 +19,4 @@ interface IrregularDayStore
      * @return IrregularDay[]
      */
     public function getAllIrregularDays();
-
 }

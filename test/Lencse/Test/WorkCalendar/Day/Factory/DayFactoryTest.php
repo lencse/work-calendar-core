@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day\Factory;
 
-
 use Lencse\Test\WorkCalendar\Day\Store\InMemoryIrregularDayStore;
 use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\DayType;
@@ -33,5 +32,4 @@ class DayFactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new DayFactory(new StoreBasedIrregularDayRetriever($store));
         return $factory;
     }
-
 }

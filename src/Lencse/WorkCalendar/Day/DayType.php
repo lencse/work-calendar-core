@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day;
 
-
 class DayType
 {
 
@@ -113,5 +112,4 @@ class DayType
             throw new \InvalidArgumentException(sprintf('Valid day types are: %s', implode(', ', $types)));
         }
     }
-
 }

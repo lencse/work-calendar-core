@@ -2,11 +2,10 @@
 
 namespace Lencse\WorkCalendar\Day;
 
-
 class Day
 {
 
-   use DayTrait;
+    use DayTrait;
 
     /**
      * @param IrregularDay $specialDay
@@ -16,5 +15,4 @@ class Day
     {
         return new self($specialDay->getDate(), $specialDay->getType(), $specialDay->getDescription());
     }
-
 }

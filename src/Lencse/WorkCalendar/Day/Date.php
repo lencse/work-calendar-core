@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day;
 
-
 class Date
 {
 
@@ -76,7 +75,7 @@ class Date
      * @return string
      * @link http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.tostring
      */
-    function __toString()
+    public function __toString()
     {
         return $this->asDateTime()->format('Ymd');
     }
@@ -88,5 +87,4 @@ class Date
     {
         return \DateTime::createFromFormat('Y.n.j', implode('.', [$this->year, $this->month, $this->day]));
     }
-
 }

@@ -26,7 +26,8 @@
     "require-dev": {
         "phpunit/phpunit": "5.*",
         "phpmd/phpmd": "^2.6",
-        "lencse/ci-tools": "^1.0"
+        "lencse/ci-tools": "^1.0",
+        "squizlabs/php_codesniffer": "^2.8"
     },
     "scripts": {
         "test": [
@@ -35,7 +36,8 @@
         "test-all": [
             "vendor/bin/phpunit",
             "vendor/bin/ci-test-coverage --min-coverage 95 --clover-file build/logs/clover.xml",
-            "vendor/bin/phpmd src/ text phpmd.xml"
+            "vendor/bin/phpmd src/ text phpmd.xml",
+            "vendor/bin/phpcs --standard=./phpcs-ruleset.xml src test"
         ]
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day;
 
-
 use Lencse\WorkCalendar\Day\DayType;
 
 class DayTypeTest extends \PHPUnit_Framework_TestCase
@@ -28,8 +27,7 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $type = DayType::get('invalid');
-        }
-        catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $e) {
             return;
         }
         $this->fail('Exception should be thrown');
@@ -49,5 +47,4 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($name, $dayType->getName());
         }
     }
-
 }
