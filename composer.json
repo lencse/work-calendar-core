@@ -1,7 +1,6 @@
 {
     "name": "lencse/work-calendar-core",
     "description": "Work calendar core library",
-    "version": "0.1.0-dev",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -37,7 +36,7 @@
             "vendor/bin/phpunit",
             "vendor/bin/ci-test-coverage --min-coverage 95 --clover-file build/logs/clover.xml",
             "vendor/bin/phpmd src/ text phpmd.xml",
-            "vendor/bin/phpcs --standard=./phpcs-ruleset.xml src test"
+            "vendor/bin/phpcs --standard=PSR2 src test"
         ]
     }
 }
