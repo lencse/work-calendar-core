@@ -7,3 +7,4 @@ set -xe
 
 apt-get update -yqq
 apt-get install git -yqq
+apt-get install wget -yqq
