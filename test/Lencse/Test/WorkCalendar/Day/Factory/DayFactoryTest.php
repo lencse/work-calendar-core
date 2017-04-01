@@ -29,7 +29,9 @@ class DayFactoryTest extends \PHPUnit_Framework_TestCase
     private function getFactory()
     {
         $store = new InMemoryIrregularDayStore();
-        $factory = new DayFactory(new StoreBasedIrregularDayRetriever($store));
+        $retriever = new StoreBasedIrregularDayRetriever($store);
+        $factory = new DayFactory($retriever);
+        
         return $factory;
     }
 }

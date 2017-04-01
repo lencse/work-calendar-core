@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cc47c88540466c4fd731378b3a0b165",
+    "content-hash": "c8624baf968e1194a8440d291bd25387",
     "packages": [],
     "packages-dev": [
         {
@@ -110,16 +110,16 @@
         },
         {
             "name": "lencse/ci-tools",
-            "version": "1.0.0",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lencse/ci-tools.git",
-                "reference": "2efb44bccf7b1c439e343efcfc1ad33578d21a16"
+                "reference": "1b018f1bf66f83e782d7c297d7f3a893c6d88df3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lencse/ci-tools/zipball/2efb44bccf7b1c439e343efcfc1ad33578d21a16",
-                "reference": "2efb44bccf7b1c439e343efcfc1ad33578d21a16",
+                "url": "https://api.github.com/repos/lencse/ci-tools/zipball/1b018f1bf66f83e782d7c297d7f3a893c6d88df3",
+                "reference": "1b018f1bf66f83e782d7c297d7f3a893c6d88df3",
                 "shasum": ""
             },
             "require": {
@@ -148,8 +148,8 @@
                     "email": "leventeloki@gmail.com"
                 }
             ],
-            "description": "Continous integration devtools",
-            "time": "2017-03-29T20:16:38+00:00"
+            "description": "Continuous integration devtools",
+            "time": "2017-04-01T07:48:54+00:00"
         },
         {
             "name": "myclabs/deep-copy",

@@ -6,7 +6,7 @@ use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\IrregularDay;
 use Lencse\WorkCalendar\Day\DayType;
 
-class SpecialDayTest extends \PHPUnit_Framework_TestCase
+class IrregularDayTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testDayCreation()

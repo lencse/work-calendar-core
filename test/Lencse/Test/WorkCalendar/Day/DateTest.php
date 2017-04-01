@@ -47,4 +47,10 @@ class DateTest extends \PHPUnit_Framework_TestCase
         $date = new Date(2017, 3, 15);
         $this->assertEquals('20170315', (string) $date);
     }
+
+    public function testAsDateTime()
+    {
+        $date = new Date(2017, 3, 18);
+        $this->assertEquals(\DateTime::createFromFormat('Y-m-d', '2017-03-18'), $date->asDateTime());
+    }
 }

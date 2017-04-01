@@ -83,7 +83,7 @@ class Date
     /**
      * @return \DateTime
      */
-    private function asDateTime()
+    public function asDateTime()
     {
         return \DateTime::createFromFormat('Y.n.j', implode('.', [$this->year, $this->month, $this->day]));
     }
