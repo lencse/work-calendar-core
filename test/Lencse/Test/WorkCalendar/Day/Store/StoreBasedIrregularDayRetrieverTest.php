@@ -2,7 +2,7 @@
 
 namespace Lencse\Test\WorkCalendar\Day\Store;
 
-use Lencse\WorkCalendar\Day\Date;
+use Lencse\Date\Date;
 use Lencse\WorkCalendar\Day\Store\StoreBasedIrregularDayRetriever;
 
 class StoreBasedIrregularDayRetrieverTest extends \PHPUnit_Framework_TestCase

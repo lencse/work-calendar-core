@@ -2,7 +2,7 @@
 
 namespace Lencse\Test\WorkCalendar\Day;
 
-use Lencse\WorkCalendar\Day\Date;
+use Lencse\Date\Date;
 use Lencse\WorkCalendar\Day\IrregularDay;
 use Lencse\WorkCalendar\Day\DayType;
 

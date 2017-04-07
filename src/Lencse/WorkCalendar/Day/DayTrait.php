@@ -2,6 +2,8 @@
 
 namespace Lencse\WorkCalendar\Day;
 
+use Lencse\Date\Date;
+
 trait DayTrait
 {
 

@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8624baf968e1194a8440d291bd25387",
-    "packages": [],
+    "content-hash": "b1348a2dd548530709bbb9688d377712",
+    "packages": [
+        {
+            "name": "lencse/date-utils",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lencse/date-utils.git",
+                "reference": "6e9000b0559b9c18664e03179e9a749ce5e413c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lencse/date-utils/zipball/6e9000b0559b9c18664e03179e9a749ce5e413c9",
+                "reference": "6e9000b0559b9c18664e03179e9a749ce5e413c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "lencse/ci-tools": "^1.0",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^2.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lencse\\Date\\": "./src/Lencse/Date/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Levente Löki",
+                    "email": "leventeloki@gmail.com"
+                }
+            ],
+            "description": "Date util library",
+            "time": "2017-04-07T18:48:18+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "corneltek/getoptionkit",

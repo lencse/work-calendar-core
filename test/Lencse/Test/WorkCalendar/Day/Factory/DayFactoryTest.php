@@ -2,8 +2,8 @@
 
 namespace Lencse\Test\WorkCalendar\Day\Factory;
 
+use Lencse\Date\Date;
 use Lencse\Test\WorkCalendar\Day\Store\InMemoryIrregularDayStore;
-use Lencse\WorkCalendar\Day\Date;
 use Lencse\WorkCalendar\Day\DayType;
 use Lencse\WorkCalendar\Day\Factory\DayFactory;
 use Lencse\WorkCalendar\Day\Store\StoreBasedIrregularDayRetriever;

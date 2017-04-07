@@ -2,7 +2,7 @@
 
 namespace Lencse\WorkCalendar\Day\Factory;
 
-use Lencse\WorkCalendar\Day\Date;
+use Lencse\Date\Date;
 use Lencse\WorkCalendar\Day\Day;
 use Lencse\WorkCalendar\Day\DayType;
 use Lencse\WorkCalendar\Day\Store\IrregularDayRetriever;
