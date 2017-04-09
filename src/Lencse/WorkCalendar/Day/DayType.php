@@ -14,7 +14,7 @@ class DayType
     /**
      * @var string
      */
-    private $type;
+    private $key;
 
     /**
      * @var string[]
@@ -39,8 +39,8 @@ class DayType
     {
         if (is_null(self::$instances)) {
             self::$instances = [];
-            foreach (self::getTypes() as $type) {
-                self::$instances[$type] = new self($type);
+            foreach (self::getTypeKeys() as $key) {
+                self::$instances[$key] = new self($key);
             }
         }
 
@@ -48,30 +48,30 @@ class DayType
     }
 
     /**
-     * @param $type
+     * @param $key
      * @return DayType
      */
-    public static function get($type)
+    public static function get($key)
     {
-        self::validateType($type);
+        self::validateKey($key);
         $all = self::getAllTypes();
 
-        return $all[$type];
+        return $all[$key];
     }
 
     /**
-     * @param string $type
+     * @param string $key
      */
-    private function __construct($type)
+    private function __construct($key)
     {
-        self::validateType($type);
-        $this->type = $type;
+        self::validateKey($key);
+        $this->key = $key;
     }
 
     /**
      * @return string[]
      */
-    private static function getTypes()
+    private static function getTypeKeys()
     {
         return array_keys(self::$names);
     }
@@ -79,9 +79,9 @@ class DayType
     /**
      * @return string
      */
-    public function getType()
+    public function getKey()
     {
-        return $this->type;
+        return $this->key;
     }
 
     /**
@@ -89,9 +89,9 @@ class DayType
      */
     public function isRestDay()
     {
-        return $this->type == self::NON_WORKING_DAY
-            || $this->type == self::RELOCATED_REST_DAY
-            || $this->type == self::WEEKEND;
+        return $this->key == self::NON_WORKING_DAY
+            || $this->key == self::RELOCATED_REST_DAY
+            || $this->key == self::WEEKEND;
     }
 
     /**
@@ -99,17 +99,17 @@ class DayType
      */
     public function getName()
     {
-        return self::$names[$this->type];
+        return self::$names[$this->key];
     }
 
     /**
-     * @param string $type
+     * @param string $key
      */
-    private static function validateType($type)
+    private static function validateKey($key)
     {
-        $types = self::getTypes();
-        if (!in_array($type, $types)) {
-            throw new \InvalidArgumentException(sprintf('Valid day types are: %s', implode(', ', $types)));
+        $keys = self::getTypeKeys();
+        if (!in_array($key, $keys)) {
+            throw new \InvalidArgumentException(sprintf('Valid day keys are: %s', implode(', ', $keys)));
         }
     }
 }

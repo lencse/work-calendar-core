@@ -18,7 +18,7 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
         ];
         foreach ($types as $type => $restDay) {
             $dayType = DayType::get($type);
-            $this->assertEquals($type, $dayType->getType());
+            $this->assertEquals($type, $dayType->getKey());
             $this->assertEquals($restDay, $dayType->isRestDay());
         }
     }
