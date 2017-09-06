@@ -2,13 +2,11 @@
 
 namespace Lencse\WorkCalendar\Day;
 
-use Lencse\Date\Date;
-
 trait DayTrait
 {
 
     /**
-     * @var Date
+     * @var \DateTime
      */
     private $date;
 
@@ -23,11 +21,11 @@ trait DayTrait
     private $description;
 
     /**
-     * @param Date $date
+     * @param \DateTime $date
      * @param DayType $type
      * @param $description
      */
-    public function __construct(Date $date, DayType $type, $description = '')
+    public function __construct(\DateTime $date, DayType $type, $description = '')
     {
         $this->date = $date;
         $this->type = $type;
@@ -35,7 +33,7 @@ trait DayTrait
     }
 
     /**
-     * @return Date
+     * @return \DateTime
      */
     public function getDate()
     {

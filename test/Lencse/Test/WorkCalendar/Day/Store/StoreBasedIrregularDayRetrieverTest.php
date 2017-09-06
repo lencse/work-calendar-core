@@ -13,10 +13,11 @@ class StoreBasedIrregularDayRetrieverTest extends \PHPUnit_Framework_TestCase
         $store = new InMemoryIrregularDayStore();
         $retriever = new StoreBasedIrregularDayRetriever($store);
         try {
-            $retriever->getIrregularDayForDate(new Date(2017, 2, 1));
+            $retriever->getIrregularDayForDate(\DateTime::createFromFormat('Y-m-d', '2017-02-01'));
         } catch (\LogicException $e) {
             return;
         }
+
         $this->fail('Exception not thrown');
     }
 }

@@ -2,21 +2,20 @@
 
 namespace Lencse\WorkCalendar\Day\Store;
 
-use Lencse\Date\Date;
 use Lencse\WorkCalendar\Day\IrregularDay;
 
 interface IrregularDayRetriever
 {
 
     /**
-     * @param Date $date
+     * @param \DateTime $date
      * @return bool
      */
-    public function hasIrregularDayForDate(Date $date);
+    public function hasIrregularDayForDate(\DateTime $date);
 
     /**
-     * @param Date $date
+     * @param \DateTime $date
      * @return IrregularDay
      */
-    public function getIrregularDayForDate(Date $date);
+    public function getIrregularDayForDate(\DateTime $date);
 }

@@ -2,7 +2,6 @@
 
 namespace Lencse\WorkCalendar\Day\Factory;
 
-use Lencse\Date\Date;
 use Lencse\WorkCalendar\Day\Day;
 use Lencse\WorkCalendar\Day\DayType;
 use Lencse\WorkCalendar\Day\Store\IrregularDayRetriever;
@@ -24,16 +23,23 @@ class DayFactory
     }
 
     /**
-     * @param Date $date
+     * @param \DateTime $date
      * @return Day
      */
-    public function createDayForDate(Date $date)
+    public function createDayForDate(\DateTime $date)
     {
         if ($this->retriever->hasIrregularDayForDate($date)) {
             return Day::createFromIrregularDay($this->retriever->getIrregularDayForDate($date));
         }
-        $type = $date->isWeekend() ? DayType::WEEKEND : DayType::WORKING_DAY;
+        $type = $this->isWeekend($date) ? DayType::WEEKEND : DayType::WORKING_DAY;
 
         return new Day($date, DayType::get($type));
+    }
+
+    private function isWeekend(\DateTime $date)
+    {
+        $dayOfWeek = (int) $date->format('N');
+
+        return 6 === $dayOfWeek || 7 === $dayOfWeek;
     }
 }

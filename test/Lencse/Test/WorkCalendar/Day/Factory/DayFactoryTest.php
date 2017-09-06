@@ -2,7 +2,6 @@
 
 namespace Lencse\Test\WorkCalendar\Day\Factory;
 
-use Lencse\Date\Date;
 use Lencse\Test\WorkCalendar\Day\Store\InMemoryIrregularDayStore;
 use Lencse\WorkCalendar\Day\DayType;
 use Lencse\WorkCalendar\Day\Factory\DayFactory;
@@ -13,13 +12,13 @@ class DayFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testNormalDay()
     {
-        $day = $this->getFactory()->createDayForDate(new Date(2017, 3, 27));
+        $day = $this->getFactory()->createDayForDate(\DateTime::createFromFormat('Y-m-d', '2017-03-27'));
         $this->assertEquals(DayType::get(DayType::WORKING_DAY), $day->getType());
     }
 
     public function testNonWorkingDay()
     {
-        $day = $this->getFactory()->createDayForDate(new Date(2017, 3, 15));
+        $day = $this->getFactory()->createDayForDate(\DateTime::createFromFormat('Y-m-d', '2017-03-15'));
         $this->assertEquals(DayType::get(DayType::NON_WORKING_DAY), $day->getType());
     }
 
