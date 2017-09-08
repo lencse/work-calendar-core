@@ -6,6 +6,9 @@ php:
 #    - '7.1'
 #    - hhvm
 #    @TODO: Make compatible with previous PHP versions!
+cache:
+    directories:
+        - $HOME/.composer/cache/files
 before_script:
     - composer self-update
     - composer install --no-interaction

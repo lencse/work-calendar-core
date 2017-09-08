@@ -2,6 +2,7 @@
 
 namespace Lencse\Test\WorkCalendar\Day;
 
+use Lencse\Date\DateHelper;
 use Lencse\WorkCalendar\Day\Day;
 use Lencse\WorkCalendar\Day\DayType;
 
@@ -11,7 +12,7 @@ class DayTest extends \PHPUnit_Framework_TestCase
     public function testDayCreation()
     {
         $day = new Day(
-            \DateTime::createFromFormat('Y-m-d', '2017-03-15'),
+            DateHelper::dateTime('2017-03-15'),
             DayType::get(DayType::NON_WORKING_DAY),
             'Az 1848-as forradalom ünnepe'
         );
@@ -23,7 +24,7 @@ class DayTest extends \PHPUnit_Framework_TestCase
     public function testDayCreationWithEmptyDescription()
     {
         $day = new Day(
-            \DateTime::createFromFormat('Y-m-d', '2017-03-18'),
+            DateHelper::dateTime('2017-03-18'),
             DayType::get(DayType::RELOCATED_WORKING_DAY)
         );
         $this->assertEquals(\DateTime::createFromFormat('Y-m-d', '2017-03-18'), $day->getDate());
