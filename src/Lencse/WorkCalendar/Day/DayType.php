@@ -48,6 +48,21 @@ class DayType
     }
 
     /**
+     * @return DayType[]
+     */
+    public static function getIrregulars()
+    {
+        $result = [];
+        foreach (self::getAllTypes() as $type) {
+            if (!$type->isRegular()) {
+                $result[$type->getKey()] = $type;
+            }
+        }
+
+        return $result;
+    }
+
+    /**
      * @param $key
      * @return DayType
      */
@@ -91,6 +106,16 @@ class DayType
     {
         return $this->key == self::NON_WORKING_DAY
             || $this->key == self::RELOCATED_REST_DAY
+            || $this->key == self::WEEKEND;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function isRegular()
+    {
+        return $this->key == self::WORKING_DAY
             || $this->key == self::WEEKEND;
     }
 

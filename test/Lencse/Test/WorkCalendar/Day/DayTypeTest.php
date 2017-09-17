@@ -47,4 +47,29 @@ class DayTypeTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($name, $dayType->getName());
         }
     }
+
+    public function testIregular()
+    {
+        $types = [
+            DayType::NON_WORKING_DAY => false,
+            DayType::RELOCATED_REST_DAY => false,
+            DayType::RELOCATED_WORKING_DAY => false,
+            DayType::WORKING_DAY => true,
+            DayType::WEEKEND => true
+        ];
+        foreach ($types as $type => $regular) {
+            $dayType = DayType::get($type);
+            $this->assertEquals($type, $dayType->getKey());
+            $this->assertEquals($regular, $dayType->isRegular());
+        }
+    }
+
+    public function testGetIrregulars()
+    {
+        $irregulars = DayType::getIrregulars();
+        $this->assertEquals(3, count($irregulars));
+        $this->assertArrayHasKey(DayType::NON_WORKING_DAY, $irregulars);
+        $this->assertArrayHasKey(DayType::RELOCATED_REST_DAY, $irregulars);
+        $this->assertArrayHasKey(DayType::RELOCATED_WORKING_DAY, $irregulars);
+    }
 }
